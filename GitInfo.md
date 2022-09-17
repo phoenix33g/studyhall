@@ -1,4 +1,5 @@
-# CFB DASHBOARD INFO
+# Studing programming
+Shhhhhh!
 
 ## **gitbash helpful codes:**
 
