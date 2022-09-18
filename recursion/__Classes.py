@@ -103,3 +103,14 @@ class BinaryNode():
         zipped_lines = zip(left, right)
         lines = [first_line, second_line] + [a + u * ' ' + b for a, b in zipped_lines]
         return lines, n + m + u, max(p, q) + 2, n + u // 2
+
+
+# Node Graph
+class GraphNode():
+    def __init__(self, data):
+        self.data = data
+        self.__neighbors = []
+    def getNeighbors(self):
+        return self.__neighbors
+    def addNeighbor(self, node):
+        self.__neighbors.append(node)
