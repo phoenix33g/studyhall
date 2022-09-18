@@ -37,6 +37,23 @@ class BinaryNode():
     def right(self, node):
         self.__right = node
 
+    def insertNode(self, data):
+        if self == None:
+            self = BinaryNode(data)
+            return
+        if self.data == data:
+            return
+        if self.data < data:
+            if self.right == None:
+                self.right = BinaryNode(data)
+                return
+            self.right.insertNode(data)
+        else:
+            if self.left == None:
+                self.left = BinaryNode(data)
+                return
+            self.left.insertNode(data)
+
     def printTree(self):
         lines, *_ = self._display_aux()
         for line in lines:
