@@ -5,7 +5,7 @@ def fibNotO(numb):
     else:
         return fibNotO(numb-1) + fibNotO(numb-2)
 
-# Memoizing to optimize
+# Memoizing to optimize /// but not tail-call recursion optimized
 def fib(numb, memo):
     if memo == None: memo = {"0": 0, "1": 1}
     if str(numb) in memo:

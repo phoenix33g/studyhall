@@ -59,3 +59,20 @@ Shhhhhh!
 ### _CHECK STATUS_
 
     git status
+
+
+
+## **BIG O:**
+
+### _Orders of Growth_
+
+| Syntax            | Description |
+| :----:            |    :----:   |
+| O( 1 )            | Constant    |
+| O( log n )        | Logarithmic |
+| O( n )            | Linear      |
+| O( n log n )      | Linerithmic |
+| O( n<sup>2</sup> )| Quadratic   |
+| O( n<sup>3</sup> )| Cubic       |
+| O( 2<sup>n</sup> )| Exponential |
+| O( n! )           | Factorial   |
