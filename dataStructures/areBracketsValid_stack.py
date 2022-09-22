@@ -8,6 +8,7 @@ whether the brackets properl match.
 [()]))() --> Invalid
 []{}({}) --> Valid
 """
+from __Classes import Stack
 
 reverseB = {
     '[':']',
@@ -17,12 +18,10 @@ reverseB = {
     '(':')',
     ')':'('
 }
-
 def isLeft(c):
     return c in '[{('
-
-
-def areBracketsValid2(bStr):
+# From array
+def areBracketsValid(bStr):
     stack = []
     for b in bStr:
         sIdx = len(stack)-1
@@ -36,10 +35,23 @@ def areBracketsValid2(bStr):
         else:
             stack.pop()
     return len(stack) == 0
+# Using built Stack Class
+def stackValid(bStr):
+    bStack = Stack()
+    for b in bStr:
+        revB = reverseB[b]
+        if isLeft(b):
+            bStack.push(b)
+        elif bStack.isEmpty() or bStack.pop() != revB:
+            return False
+    return bStack.isEmpty()
 
-print(areBracketsValid2('[{}]'))
-print(areBracketsValid2('(()())'))
-print(areBracketsValid2('{]'))
-print(areBracketsValid2('[()]))()'))
-print(areBracketsValid2('[]{}({})'))
-print(areBracketsValid2('[]{}({})(('))
+
+# testing
+testCases = ['[{}]', '(()())', '{]', '[()]))()', '[]{}({})', '[]{}({})((']
+print("= Array stack =============================")
+for s in testCases:
+    print(areBracketsValid(s))
+print("= Stack ===================================")
+for s in testCases:
+    print(stackValid(s))
