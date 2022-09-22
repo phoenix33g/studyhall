@@ -10,7 +10,6 @@ class Solution:
         while i < len(s):
             val = s[i:i+2]
             if val in special:
-                print(val)
                 i += 2
             else:
                 output += lookup[s[i]]

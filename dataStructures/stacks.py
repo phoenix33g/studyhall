@@ -35,10 +35,11 @@ def areBracketsValid2(bStr):
             return False
         else:
             stack.pop()
-    return True
+    return len(stack) == 0
 
 print(areBracketsValid2('[{}]'))
 print(areBracketsValid2('(()())'))
 print(areBracketsValid2('{]'))
 print(areBracketsValid2('[()]))()'))
 print(areBracketsValid2('[]{}({})'))
+print(areBracketsValid2('[]{}({})(('))
